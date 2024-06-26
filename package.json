@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "axios": "^1.7.2",
+    "react-router-dom": "^6.24.0",
     "ulid": "^2.3.0"
   },
   "devDependencies": {
