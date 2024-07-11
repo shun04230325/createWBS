@@ -25,8 +25,8 @@ const Top = (props) => {
                 {/* 作成したプロジェクトが入る */}
                 <div className="">
                     <div className="flex_wrapper width-60">
-                        <div className="content_title">プロジェクト一覧</div>
-                        <div className="content_title">作成日</div>
+                        <div className="content_title list_name">プロジェクト一覧</div>
+                        <div className="content_title list_name margin-left-l">作成日</div>
                     </div>
 
                     <div className="flex_wrapper width-100">

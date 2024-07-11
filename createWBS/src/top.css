@@ -19,6 +19,10 @@
 
 .createBtn {
     font-size: 18px;
+    border-radius: 10%;
+    box-shadow: 30px;
+    background-color: rgb(38, 169, 250);
+    color: #fff;
 }
 
 .top_main_content {
@@ -50,6 +54,16 @@
     justify-content: space-around;
     margin: 10px 0;
     padding-top: 10px;
+}
+
+.list_name {
+    font-weight: bold;
+    font-size: 30px;
+    color: grey;
+}
+
+.margin-left-l {
+    margin-left: 60px;
 }
 
 .width-60 {
