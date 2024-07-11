@@ -1,7 +1,10 @@
 import { useNavigate } from 'react-router-dom';
+import { useWbs } from '../Hooks/use-context';
 import '../top.css';
 
 const Top = (props) => {
+
+    const { b,d} = useWbs();
     // ナビゲーション処理
     const navigate = useNavigate();
     const onClickNewCreatePage = () => {

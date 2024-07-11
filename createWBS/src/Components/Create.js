@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { useWbs } from "../Hooks/use-context";
 
 // 作成したWBSの表示を行う
 const Create = () => {
+    const { a,c } = useWbs();
     return (
         <>
             <h1>WBS作成画面</h1>
