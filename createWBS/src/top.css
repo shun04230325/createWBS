@@ -13,11 +13,65 @@
     justify-content: space-between;
 }
 
-/* TODO::React-Routerを使用したリンクタグの下線等うまく消せなかったので後回し */
 .create_link {
     text-decoration: none;
 }
 
 .createBtn {
     font-size: 18px;
+}
+
+.top_main_content {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.top_edit_delete_btn {
+    display: inline-block;          /* ボタンを横並びにする */
+    border: none;                   /* 枠線をなくす */
+    border-radius: 5px;             /* 角丸をつける */
+    padding: 10px 15px;             /* ボタンの内側の余白 */
+    margin: 5px;                    /* ボタン同士の余白 */
+    background-color: #005714;    /* ボタンの背景色 */
+    color: white;                 /* ボタンの文字色 */
+    text-align: center;             /* ボタンのテキストを中央揃えにする */
+    text-decoration: none;          /* テキストに下線をつけない */
+    font-size: 15px;                /* テキストのフォントサイズ */
+    cursor: pointer;                /* マウスポインタを変更する */
+}
+
+.margin-left {
+    margin-left: 2rem;
+}
+
+.flex_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px 0;
+    padding-top: 10px;
+}
+
+.width-60 {
+    width: 60%;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.gray {
+    background-color: gray;
 }
