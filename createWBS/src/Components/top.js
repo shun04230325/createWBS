@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../top.css';
 
 const Top = (props) => {
@@ -22,14 +21,71 @@ const Top = (props) => {
                 </button>
             </div>
 
-            <div>
+            <div className="top_main_content">
                 {/* 作成したプロジェクトが入る */}
-                <div onClick={onClickProjetShowPage}>作成したプロジェクト名</div>
+                <div className="">
+                    <div className="flex_wrapper width-60">
+                        <div className="content_title list_name">プロジェクト一覧</div>
+                        <div className="content_title list_name margin-left-l">作成日</div>
+                    </div>
 
-                {/* 編集ボタン */}
-                <button>編集</button>
-                {/* 削除ボタン */}
-                <button>削除</button>
+                    <div className="flex_wrapper width-100">
+                        <div onClick={onClickProjetShowPage}>作成したプロジェクト名</div>
+                        <div>2024/07/15</div>
+                        <div className="">
+                            {/* 編集ボタン */}
+                            <button className="top_edit_delete_btn">編集</button>
+                            {/* 削除ボタン */}
+                            <button className="top_edit_delete_btn margin-left">削除</button>
+                        </div>
+                    </div>
+                    {/* 以下、ループしてプロジェクト分出てくるようにする */}
+
+                    <div className="flex_wrapper width-100">
+                        <div onClick={onClickProjetShowPage}>作成したプロジェクト名</div>
+                        <div>2024/07/16</div>
+                        <div className="">
+                            {/* 編集ボタン */}
+                            <button className="top_edit_delete_btn">編集</button>
+                            {/* 削除ボタン */}
+                            <button className="top_edit_delete_btn margin-left">削除</button>
+                        </div>
+                    </div>
+
+                    <div className="flex_wrapper width-100">
+                        <div onClick={onClickProjetShowPage}>作成したプロジェクト名</div>
+                        <div>2024/07/17</div>
+                        <div className="">
+                            {/* 編集ボタン */}
+                            <button className="top_edit_delete_btn">編集</button>
+                            {/* 削除ボタン */}
+                            <button className="top_edit_delete_btn margin-left">削除</button>
+                        </div>
+                    </div>
+
+                    <div className="flex_wrapper width-100">
+                        <div onClick={onClickProjetShowPage}>作成したプロジェクト名</div>
+                        <div>2024/07/18</div>
+                        <div className="">
+                            {/* 編集ボタン */}
+                            <button className="top_edit_delete_btn">編集</button>
+                            {/* 削除ボタン */}
+                            <button className="top_edit_delete_btn margin-left">削除</button>
+                        </div>
+                    </div>
+
+                    <div className="flex_wrapper width-100">
+                        <div onClick={onClickProjetShowPage}>作成したプロジェクト名</div>
+                        <div>2024/07/19</div>
+                        <div className="">
+                            {/* 編集ボタン */}
+                            <button className="top_edit_delete_btn">編集</button>
+                            {/* 削除ボタン */}
+                            <button className="top_edit_delete_btn margin-left">削除</button>
+                        </div>
+                    </div>
+                    {/* モック終了 */}
+                </div>
             </div>
         </div>
     );
