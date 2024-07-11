@@ -1,0 +1,23 @@
+.title {
+    font-size: 24px;
+}
+
+.top_content {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.title_block {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* TODO::React-Routerを使用したリンクタグの下線等うまく消せなかったので後回し */
+.create_link {
+    text-decoration: none;
+}
+
+.createBtn {
+    font-size: 18px;
+}
