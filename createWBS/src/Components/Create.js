@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 // 作成したWBSの表示を行う
 const Create = () => {
-  const [taskId, setTaskId] = useState(0)
+  const [taskId, setTaskId] = useState(1)
   const [tasks, setTasks] = useState([0])
 
   const addTasks = () => {
@@ -12,6 +12,7 @@ const Create = () => {
     setTaskId(taskId + 1)
   }
   const removeElement = (elementId) => {
+    setTaskId(taskId - 1)
     let indexToRemove = tasks.indexOf(elementId + 1)
 
     if (indexToRemove !== -1) {
@@ -85,11 +86,8 @@ const Create = () => {
           <th>小項目</th>
           <th>工数</th>
         </tr>
-        {tasks.map((task) => (
-          <>
-            {' '}
-            <BigTask id={task} />
-          </>
+        {tasks.map((taskId) => (
+            <BigTask id={taskId} />
         ))}
       </table>
     </>
