@@ -3,42 +3,41 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 // 作成したWBSの表示を行う
-const Create = () => {
-  const [taskId, setTaskId] = useState(1)
-  const [tasks, setTasks] = useState([0])
+const Create = () =>  {
+  const [tasks, setTasks] = useState([{ id:`task0`}]);
+  const [smallTask, setSmallTask] = useState([{ id:`smallTask0`}]);
 
-  const addTasks = () => {
-    setTasks([...tasks, taskId + 1])
-    setTaskId(taskId + 1)
-  }
-  const removeElement = (elementId) => {
-    setTaskId(taskId - 1)
-    let indexToRemove = tasks.indexOf(elementId + 1)
+  const addBigTask = () => {
+    const newTask = { id:`task ${tasks.length + 1}` };
+    setTasks([...tasks, newTask]);
+  };
 
-    if (indexToRemove !== -1) {
-      tasks.splice(indexToRemove, 1)
-    }
-    // 指定されたIDを持つ要素を取得
-    var element = document.getElementById('task' + elementId)
-    // 要素が存在する場合、削除
-    if (element) {
-      element.parentNode.removeChild(element)
-    }
-  }
+  const removeBigTask = (id) => {
+    setTasks(tasks.filter(task => task.id !== id));
+  };
+
+  const addSmallTask = () => {
+    const newTask = { id:`smaalTask ${tasks.length + 1}` };
+    setSmallTask([...smallTask, newTask]);
+  };
+
+  const removeSmallTask = (id) => {
+    setSmallTask(smallTask.filter(task => task.id !== id));
+  };
   const BigTask = (props) => {
     return (
       <>
-        <tr id={'task' + props.id}>
+        <tr id={props.id}>
           <input type="text" />
 
           <div>
-            <button onClick={() => removeElement(props.id)}>削除</button>
+          <button onClick={() => removeBigTask(props.id)}>削除</button>
           </div>
           <td>
-            <SmallTask />
-            <SmallTask />
-            <SmallTask />
-            <SmallTask />
+          {smallTask.map((task) => (
+            <SmallTask id={task.id} key={task.id}/>
+        ))}
+          
           </td>
           <td>
             <WorkingTime />
@@ -48,11 +47,12 @@ const Create = () => {
     )
   }
 
-  const SmallTask = () => {
+  const SmallTask = (props) => {
     return (
-      <div>
+      <div id={'task' + props.id}>
         <input type="text"></input>
-        <button>削除</button>
+        <button onClick={addSmallTask}>増える</button>
+        <button onClick={() => removeSmallTask(props.id)}>削除</button>
       </div>
     )
   }
@@ -64,9 +64,8 @@ const Create = () => {
       </>
     )
   }
-
   return (
-    <>
+    <div className="App">
       <h1>WBS作成画面</h1>
       <h2>Sample HTML Table</h2>
       <Link to={`/show/`}>
@@ -77,7 +76,7 @@ const Create = () => {
         <button>トップへ戻る</button>
       </Link>
       <div>
-        <button onClick={addTasks}>増えます</button>
+        <button onClick={addBigTask}>増えます</button>
       </div>
 
       <table>
@@ -86,12 +85,13 @@ const Create = () => {
           <th>小項目</th>
           <th>工数</th>
         </tr>
-        {tasks.map((taskId) => (
-            <BigTask id={taskId} />
+        {tasks.map((task) => (
+            <BigTask id={task.id} key={task.id}/>
         ))}
       </table>
-    </>
-  )
+    </div>
+  );
 }
+
 
 export default Create
