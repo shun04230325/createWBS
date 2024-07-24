@@ -13,10 +13,16 @@ return useContext(Contexst)
 }
 
 const useProvideContext=()=>{
+    const [bigTasks, setBigTasks] = useState([
+        {
+            id: 1,
+            date: '',
+            subTasks: [{ id: 1, date: '' }],
+        },
+    ]);
 
-    const [a,b] =useState();
-    const [c,d] =useState();
-
-
-    return {a,b,c,d}
+    return {
+        bigTasks,
+        setBigTasks,
+    };
 }
