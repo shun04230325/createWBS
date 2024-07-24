@@ -86,6 +86,23 @@ export const WbsManager = () => {
 
     return (
         <div>
+            {/* 開始時刻等 */}
+            <div>
+                <div>
+                    <label for="wakingTime">一日の作業時間</label>
+                    <input type="text" name="wakingTime" />
+                </div>
+                <div>
+                    <label for="startTime">開始時刻</label>
+                    <input type="text" name="startTime" />
+                </div>
+                <div>
+                    <label for="endTime">終了時刻</label>
+                    <input type="text" name="endTime" />
+                </div>
+            </div>
+            {/* 開始時刻等 */}
+
             <h2>プロジェクトX</h2>
             <table>
                 <thead>
